@@ -45,3 +45,14 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: sukeshrapuru/user-service-practice:latest
+
+      # Step 4: Run Tests and Generate Coverage Report
+      - name: Run Tests with Coverage
+        run: mvn test jacoco:report
+
+      # Step 5: Upload coverage report to Codecov
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: target/site/jacoco/jacoco.xml
