@@ -44,4 +44,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: sukeshrapuru/hire10x:latest
+          tags: sukeshrapuru/user-service-practice:latest
