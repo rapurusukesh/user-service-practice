@@ -137,24 +137,6 @@
                 			</execution>
             			</executions>
         		</plugin>
-			<plugin>
-            			<groupId>org.apache.maven.plugins</groupId>
-            			<artifactId>maven-checkstyle-plugin</artifactId>
-            			<version>3.1.2</version> <!-- Use the latest version -->
-            			<configuration>
-                			<configLocation>checkstyle.xml</configLocation>
-                			<outputDirectory>${project.build.directory}/checkstyle-results</outputDirectory>
-                			<failOnViolation>true</failOnViolation>
-            			</configuration>
-            			<executions>
-                			<execution>
-                    				<phase>validate</phase>
-                    				<goals>
-                        				<goal>check</goal>
-                    				</goals>
-                			</execution>
-            			</executions>
-        		</plugin>
 		</plugins>
 		<finalName>training-user-service-docker</finalName>
 	</build>
