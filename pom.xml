@@ -6,15 +6,15 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.Hire10x</groupId>
     <artifactId>CreateUser</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CreateUser</name>
     <description>User implementation in the project.</description>
-    <url>https://github.com/your-github-username/CreateUser</url>
-    
+    <url>https://github.com/rapurusukesh/CreateUser</url>
+
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
@@ -150,14 +150,16 @@
     </build>
 
     <distributionManagement>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>sonatype-nexus-releases</id>
-            <url>https://oss.sonatype.org/content/repositories/releases/</url>
-        </repository>
+        <repositories>
+            <repository>
+                <id>sonatype-nexus-snapshots</id>
+                <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            </repository>
+            <repository>
+                <id>sonatype-nexus-releases</id>
+                <url>https://oss.sonatype.org/content/repositories/releases/</url>
+            </repository>
+        </repositories>
     </distributionManagement>
 
     <profiles>
