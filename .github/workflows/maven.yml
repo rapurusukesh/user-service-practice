@@ -26,6 +26,29 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
+      # Step 4: Run Tests and Generate Coverage Report
+      - name: Run Tests with Coverage
+        run: mvn test jacoco:report
+
+      # Step 5: Upload coverage report to Codecov
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: target/site/jacoco/jacoco.xml
+
+      # Step 4: Run Checkstyle
+      - name: Run Checkstyle
+        run: mvn checkstyle:check
+
+      # Step 5: Upload Checkstyle Report as Artifact
+      - name: Upload Checkstyle Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: checkstyle-report
+          path: target/checkstyle-results.xml  # Adjust path if necessary
+
+
       # Step 4: Set up Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -46,13 +69,4 @@ jobs:
           push: true
           tags: sukeshrapuru/user-service-practice:latest
 
-      # Step 4: Run Tests and Generate Coverage Report
-      - name: Run Tests with Coverage
-        run: mvn test jacoco:report
-
-      # Step 5: Upload coverage report to Codecov
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: target/site/jacoco/jacoco.xml
+      
