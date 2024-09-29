@@ -43,7 +43,7 @@ jobs:
 
       # Step 5: Upload Checkstyle Report as Artifact
       - name: Upload Checkstyle Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: checkstyle-report
           path: target/checkstyle-results.xml  # Adjust path if necessary
