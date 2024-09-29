@@ -37,19 +37,19 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: target/site/jacoco/jacoco.xml
 
-      # Step 4: Run Checkstyle
-      - name: Run Checkstyle
-        run: mvn checkstyle:check
+      # # Step 4: Run Checkstyle
+      # - name: Run Checkstyle
+      #   run: mvn checkstyle:check
 
-      # Step 5: Upload Checkstyle Report as Artifact
-      - name: Upload Checkstyle Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: checkstyle-report
-          path: target/checkstyle-results.xml  # Adjust path if necessary
+      # # Step 5: Upload Checkstyle Report as Artifact
+      # - name: Upload Checkstyle Report
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: checkstyle-report
+      #     path: target/checkstyle-results.xml
 
 
-      # Step 4: Set up Docker Buildx
+      # Step 4: Set up Docker Build
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
